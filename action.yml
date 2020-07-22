@@ -2,7 +2,7 @@ name: 'Broadcast a message through issue comments'
 description: 'Send a message through issue comments'
 branding:
   icon: 'speaker'
-  color: 'pink'
+  color: 'blue'
 inputs:
   token:
     description: 'The GitHub authentication token.'
