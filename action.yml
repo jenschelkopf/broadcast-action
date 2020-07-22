@@ -1,0 +1,23 @@
+name: 'Broadcast a message through issue comments'
+description: 'Send a message through issue comments'
+branding:
+  icon: 'speaker'
+  color: 'pink'
+inputs:
+  token:
+    description: 'The GitHub authentication token.'
+    required: false
+    default: ${{ github.token }}
+  state:
+    description: 'State of the issues to send a message to. Valid options are open, closed, or all'
+    required: false
+    default: 'all'
+  labels:
+    description: 'A list of comma seperated label names to send the message to.'
+    required: false
+  message:
+    description: 'The comment message to send'
+    required: true
+runs:
+  using: 'node12'
+  main: 'index.js'
