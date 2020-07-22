@@ -6,7 +6,13 @@ async function run() {
   const octokit = github.getOctokit(token);
   const owner = github.context.repo.owner;
   const repo = github.context.repo.repo;
-  const labels = core.getInput('labels');
+  var labels = core.getInput('labels');
+  var message = core.getInput('message');
+
+  if(github.context.payload.inputs) {
+    labels = github.context.payload.inputs.labels;
+    message = github.context.payload.inputs.message;
+  }
 
   const issueResponse = await octokit.issues.listForRepo({
      owner,
@@ -17,7 +23,6 @@ async function run() {
   const issues = issueResponse.data;
   console.log(`Found ${issues.length} issues`)
 
-  const body = core.getInput('message');
 
   for (const issue in issues) {
     console.log(`Adding '${body}' to ${issue.number}`);
