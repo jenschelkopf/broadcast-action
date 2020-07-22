@@ -5,6 +5,8 @@ The action is intended to work with the `workflow_dispatch` event.
 
 ![Screen Shot 2020-07-22 at 3 40 34 PM](https://user-images.githubusercontent.com/1865328/88226464-b7f56d00-cc31-11ea-81e2-f54a3aa34b24.png)
 
+An optional 'labels' input lets you target a subset of issues.
+
 
 ## Usage
 ### Pre-requisites
