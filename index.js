@@ -25,14 +25,16 @@ async function run() {
   console.log(JSON.stringify(issues));
 
 
-  for (const issue in issues) {
-    console.log(`Adding '${body}' to ${JSON.stringify(issue)}`);
-    await octokit.issues.createComment({
-      owner,
-      repo,
-      issue_number: issue.number,
-      body
-    });
+  for (const issue of issues) {
+    if (issue) {
+      console.log(`Adding '${body}' to ${JSON.stringify(issue)}`);
+      // await octokit.issues.createComment({
+      //   owner,
+      //   repo,
+      //   issue_number: issue.number,
+      //   body
+      // });
+    }
   }
 }
 
