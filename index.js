@@ -14,9 +14,11 @@ async function run() {
     body = github.context.payload.inputs.message;
   }
 
+  var issueResponse = null;
+
   if(labels) {
     console.log('Using labels ' + labels)
-    const issueResponse = await octokit.issues.listForRepo({
+    issueResponse = await octokit.issues.listForRepo({
        owner,
        repo,
        per_page: 100,
@@ -24,7 +26,7 @@ async function run() {
     });
   } else {
     console.log("Not using labels")
-    const issueResponse = await octokit.issues.listForRepo({
+    issueResponse = await octokit.issues.listForRepo({
        owner,
        repo,
        per_page: 100
