@@ -22,18 +22,16 @@ async function run() {
   });
   const issues = issueResponse.data;
   console.log(`Found ${issues.length} issues`);
-  console.log(JSON.stringify(issues));
-
 
   for (const issue of issues) {
     if (issue) {
-      console.log(`Adding '${body}' to ${JSON.stringify(issue)}`);
-      // await octokit.issues.createComment({
-      //   owner,
-      //   repo,
-      //   issue_number: issue.number,
-      //   body
-      // });
+      console.log(`Adding '${body}' to ${issue.number}`);
+      await octokit.issues.createComment({
+        owner,
+        repo,
+        issue_number: issue.number,
+        body
+      });
     }
   }
 }
