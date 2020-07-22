@@ -14,12 +14,21 @@ async function run() {
     body = github.context.payload.inputs.message;
   }
 
-  const issueResponse = await octokit.issues.listForRepo({
-     owner,
-     repo,
-     per_page: 100,
-     labels
-  });
+  if(labels) {
+    const issueResponse = await octokit.issues.listForRepo({
+       owner,
+       repo,
+       per_page: 100,
+       labels
+    });
+  } else {
+    const issueResponse = await octokit.issues.listForRepo({
+       owner,
+       repo,
+       per_page: 100
+    });
+  }
+
   const issues = issueResponse.data;
   console.log(`Found ${issues.length} issues`);
 
