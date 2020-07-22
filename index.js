@@ -21,7 +21,8 @@ async function run() {
      labels
   });
   const issues = issueResponse.data;
-  console.log(`Found ${issues.length} issues`)
+  console.log(`Found ${issues.length} issues`);
+  console.log(JSON.stringify(issues));
 
 
   for (const issue in issues) {
