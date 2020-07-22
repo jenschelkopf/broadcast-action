@@ -11,7 +11,7 @@ async function run() {
 
   if(github.context.payload.inputs) {
     labels = github.context.payload.inputs.labels;
-    message = github.context.payload.inputs.message;
+    body = github.context.payload.inputs.message;
   }
 
   const issueResponse = await octokit.issues.listForRepo({
