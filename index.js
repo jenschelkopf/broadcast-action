@@ -15,6 +15,7 @@ async function run() {
   }
 
   if(labels) {
+    console.log('Using labels ' + labels)
     const issueResponse = await octokit.issues.listForRepo({
        owner,
        repo,
@@ -22,6 +23,7 @@ async function run() {
        labels
     });
   } else {
+    console.log("Not using labels")
     const issueResponse = await octokit.issues.listForRepo({
        owner,
        repo,
