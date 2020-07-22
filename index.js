@@ -7,7 +7,7 @@ async function run() {
   const owner = github.context.repo.owner;
   const repo = github.context.repo.repo;
   var labels = core.getInput('labels');
-  var message = core.getInput('message');
+  var body = core.getInput('message');
 
   if(github.context.payload.inputs) {
     labels = github.context.payload.inputs.labels;
