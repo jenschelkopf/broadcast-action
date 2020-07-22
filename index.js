@@ -26,7 +26,7 @@ async function run() {
 
 
   for (const issue in issues) {
-    console.log(`Adding '${body}' to ${issue.number}`);
+    console.log(`Adding '${body}' to ${JSON.stringify(issue)}`);
     await octokit.issues.createComment({
       owner,
       repo,
