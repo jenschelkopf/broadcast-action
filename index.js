@@ -1,10 +1,10 @@
 const github = require("@actions/github");
 const core = require("@actions/core");
+const graphql = require("@octokit/graphql");
 
 async function run() {
   const token = core.getInput('token');
   const octokit = github.getOctokit(token);
-  const graphql = require("@octokit/graphql");
   const owner = github.context.repo.owner;
   const repo = github.context.repo.repo;
   var labels = core.getInput('labels');
