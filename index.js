@@ -46,12 +46,12 @@ async function run() {
   for (const issue of issues) {
     if (issue) {
       console.log(`Adding '${body}' to ${issue.number}`);
-      await octokit.issues.createComment({
-        owner,
-        repo,
-        issue_number: issue.number,
-        body
-      });
+//       await octokit.issues.createComment({
+//         owner,
+//         repo,
+//         issue_number: issue.number,
+//         body
+//       });
     }
   }
 }
