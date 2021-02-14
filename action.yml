@@ -15,6 +15,12 @@ inputs:
   labels:
     description: 'A list of comma seperated label names to send the message to.'
     required: false
+  project-url:
+    description: 'The url of the project'
+    required: false
+  column-name:
+    description: 'The column that the messages should be broadcast to'
+    required: false
   message:
     description: 'The comment message to send'
     required: true
